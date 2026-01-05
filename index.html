@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oroboros-9 Stack - Public Tier AI Orchestration</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --secondary: #8b5cf6;
+            --accent: #22c55e;
+            --dark: #0a0a0f;
+            --dark-light: #1a1a2e;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            font-size: 0.9em;
+            color: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+        }
+
+        /* Tier Limits */
+        .tier-limits {
+            padding: 80px 0;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .limits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .limit-card {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .limit-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 5px;
+        }
+
+        .limit-label {
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        /* Quick Start */
+        .quick-start {
+            padding: 80px 0;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Oroboros-9 Stack</div>
+            <p class="tagline">Public Tier AI Orchestration System</p>
+            <span class="tier-badge">PUBLIC TIER - 400 MAX SLOTS</span>
+        </header>
+
+        <section class="hero">
+            <h1>Intelligent AI Orchestration</h1>
+            <p>Access the power of Oroboros-9 Stack with controlled public tier access.
+                Deploy, scale, and orchestrate AI models with predictable performance.</p>
+        </section>
+
+        <section class="features">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5em;">Public Tier Capabilities</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>LOGOS-9.5 Control Engine</h3>
+                    <p>Access to the powerful control engine for intelligent task routing and orchestration</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Controlled Scaling</h3>
+                    <p>Scale up to 400 concurrent processing slots with predictable performance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Tier Enforcement</h3>
+                    <p>Hard limits prevent resource abuse and ensure system stability</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>WebSocket Integration</h3>
+                    <p>Real-time communication and monitoring through WebSocket protocol</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Controlled Mirroring</h3>
+                    <p>Up to 3 simultaneous model instances for parallel processing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Usage Monitoring</h3>
+                    <p>Real-time monitoring of slot usage and resource utilization</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tier-limits">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5em;">Public Tier Limits</h2>
+            <div class="limits-grid">
+                <div class="limit-card">
+                    <div class="limit-value">400</div>
+                    <div class="limit-label">Max Concurrent Slots</div>
+                </div>
+                <div class="limit-card">
+                    <div class="limit-value">8K</div>
+                    <div class="limit-label">Context Window</div>
+                </div>
+                <div class="limit-card">
+                    <div class="limit-value">3</div>
+                    <div class="limit-label">Max Mirrors</div>
+                </div>
+                <div class="limit-card">
+                    <div class="limit-value">1</div>
+                    <div class="limit-label">Allowed Model</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-start">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5em;">Quick Start</h2>
+
+            <h3>1. Install Dependencies</h3>
+            <div class="code-block">
+                pip install websockets
+            </div>
+
+            <h3>2. Start Public Node</h3>
+            <div class="code-block">
+                # Windows
+                start_public_node.bat
+
+                # Linux/Mac
+                ./start_public_node.sh
+
+                # Or directly
+                python 9s_public_node.py PUBLIC-001
+            </div>
+
+            <h3>3. Connect and Use</h3>
+            <div class="code-block">
+                import asyncio
+                from example_client import PublicTierClient
+
+                async def main():
+                client = PublicTierClient("ws://localhost:9001")
+                result = await client.process_text("Hello, 9S Public Tier!")
+                print(result)
+
+                asyncio.run(main())
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>Oroboros-9 Stack Public Tier</strong> - Controlled AI Orchestration</p>
+            <p>Repository: <a href="https://github.com/oroboroslab/oroboros-9-stack"
+                    style="color: var(--primary-light);">github.com/oroboroslab/oroboros-9-stack</a></p>
+            <p>© 2025 Oroboros Labs. Public Tier Access.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
